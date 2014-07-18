@@ -1,0 +1,2 @@
+deploy_npm_tasks:
+  - default
