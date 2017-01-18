@@ -3,12 +3,12 @@
   command: >
     direnv exec . npm {{ item }}
     chdir={{ deploy_release_dir }}
-  with_items: deploy_npm_tasks
+  with_items: "{{ deploy_npm_tasks }}"
   when: deploy_with_environment is defined
 
 - name: performing npm tasks (without direnv)
   command: >
     npm {{ item }}
     chdir={{ deploy_release_dir }}
-  with_items: deploy_npm_tasks
+  with_items: "{{ deploy_npm_tasks }}"
   when: deploy_with_environment is not defined
